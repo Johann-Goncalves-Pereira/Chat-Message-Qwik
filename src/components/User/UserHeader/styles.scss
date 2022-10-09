@@ -1,0 +1,30 @@
+[class*="top-arrow"]::before {
+	content: "";
+
+	border-top: theme("borderWidth.DEFAULT") solid theme("colors.surface-700");
+	border-left: theme("borderWidth.DEFAULT") solid theme("colors.surface-700");
+	margin-right: theme("spacing.5");
+	margin-left: auto;
+
+	width: theme("spacing.2");
+	height: theme("spacing.2");
+
+	transform: translate(theme("translate.1/2"), theme("translate.1/2")) rotate(theme("rotate.45"));
+	transition: theme("transitionProperty.opacity");
+
+	background-color: theme("colors.surface-900");
+}
+
+.top-arrow {
+	&--absolute::before {
+		position: absolute;
+		right: 0;
+		top: 0;
+		transform: translate(75%, -55%) rotate(theme("rotate.45"));
+		background-color: theme("colors.surface-800");
+		border-color: theme("colors.surface-600");
+	}
+}
+
+.line {
+}

@@ -1,0 +1,24 @@
+[class*="before-ball"]::before {
+	content: "";
+	border-radius: theme("borderRadius.full");
+	outline: var(--outline-width_, theme("outlineWidth.3")) solid var(--border-color_, theme("colors.gray.900"));
+	outline-offset: theme("outlineOffset.-2");
+
+	width: var(--size_, theme("spacing.3"));
+	height: var(--size_, theme("spacing.3"));
+	background-color: var(--bg-color_, theme("colors.emerald.400"));
+}
+
+.before-ball {
+	&--notification::before {
+		position: absolute;
+		top: 100%;
+		left: 100%;
+		transform: translate(-80%, -80%);
+	}
+
+	&--empty::before {
+		--outline-width_: 0;
+		--size_: theme("spacing.2");
+	}
+}
