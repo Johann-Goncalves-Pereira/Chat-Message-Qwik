@@ -1,8 +1,8 @@
-import { component$, useStore } from "@builder.io/qwik";
+import { component$, Slot, useStore } from "@builder.io/qwik";
 import { SimpleComponentProps } from "@components/Global";
 
 export const SearchBar = component$(
-  ({ className = "", children }: SimpleComponentProps) => {
+  ({ className = "" }: SimpleComponentProps) => {
     const state = useStore({
       search: "",
     });
@@ -21,7 +21,7 @@ export const SearchBar = component$(
           }
           value={state.search}
         />
-        {children}
+        <Slot />
         <button class="grid h-full place-items-center px-1">
           <span class="material-symbols-rounded scale-75 text-surface-400">
             search
