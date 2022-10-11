@@ -9,7 +9,6 @@ module.exports = {
       content: {
         blank: "''",
       },
-
       gridTemplateColumns: {
         "auto-1fr": "auto 1fr",
         "1fr-auto": "1fr auto",
@@ -17,6 +16,7 @@ module.exports = {
       gridTemplateRows: {
         "auto-1fr": "auto 1fr",
         "1fr-auto": "1fr auto",
+        "header-content": "3rem 1fr",
       },
       outlineWidth: {
         3: "3px",
