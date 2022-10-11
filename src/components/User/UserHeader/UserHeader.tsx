@@ -20,7 +20,7 @@ export const UserHeader = component$(
       <>
         <button
           class={`relative ml-auto mr-5 cursor-pointer
-           hover:brightness-110 [&:hover>p]:opacity-100 [&:hover>p]:delay-700 ${
+           hover:brightness-110 [&:hover>p]:scale-100 [&:hover>p]:opacity-100 [&:hover>p]:delay-700 ${
              hasNotifications || "before-ball--notification"
            }`}
           aria-labelledby={`current-user-first-name=${name}`}
@@ -30,7 +30,7 @@ export const UserHeader = component$(
 
           {!state.showOptions && (
             <p
-              class="top-arrow pointer-events-none absolute top-full right-0 grid opacity-0 delay-75"
+              class="top-arrow pointer-events-none absolute top-full right-0 grid scale-0 opacity-0 delay-75"
               id={`current-user-first-name=${name}`}
             >
               <span

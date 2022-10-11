@@ -1,20 +1,44 @@
+@custom-selector :--elements  html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video;
+
 /* Box sizing rules */
 :where(*, *::before, *::after) {
 	box-sizing: border-box;
+
+	scrollbar-width: thin;
+	scrollbar-color: theme("colors.teal.500") transparent;
+
+	&::-webkit-scrollbar {
+		background-color: transparent;
+		border-radius: theme("borderRadius.full");
+
+		width: 0.25rem;
+		height: 0.25rem;
+
+		&-track {
+			border-radius: theme("borderRadius.full");
+		}
+
+		&-thumb {
+			background-color: transparent;
+			background-color: theme("colors.teal.500");
+			&:hover {
+			}
+		}
+	}
 }
 
 /* Remove default margin */
-:where(html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video) {
+:where(:--elements) {
 	margin: 0;
 	padding: 0;
 	border: 0;
 	font: inherit;
-	line-height: calc(2px + 2ex + 2px);
 	color: inherit;
+	line-height: calc(4px + 1ex) !important;
 }
 
 /* Set core body defaults */
-:where(html) {
+:where(html:focus-within) {
 	scroll-behavior: smooth;
 }
 :where(body) {
@@ -39,10 +63,10 @@
 	border-spacing: 0;
 }
 
-/* A elements that don't have a class get default styles */
-a:not([class]) {
-	text-decoration-skip-ink: auto;
-}
+// /* A elements that don't have a class get default styles */
+// a:not([class]) {
+// 	text-decoration-skip-ink: auto;
+// }
 
 /* Make images easier to work with */
 :where(img, picture) {
@@ -50,11 +74,9 @@ a:not([class]) {
 	display: block;
 }
 
-//& Personal
 :where(:focus-visible) {
-	outline: 2px dashed currentColor;
+	outline: 1px dashed theme("colors.orange.500");
 }
-
 :where(:focus) {
 	outline: none;
 }
@@ -70,13 +92,12 @@ a:not([class]) {
 	border: 0;
 }
 
-:where(input) {
-	&::-webkit-search-cancel-button {
-		-webkit-appearance: none;
-		display: none;
-		opacity: 0;
-		pointer-events: none;
-	}
+// Remove X from input with type="search"
+:where(input)::-webkit-search-cancel-button {
+	-webkit-appearance: none;
+	display: none;
+	opacity: 0;
+	pointer-events: none;
 }
 
 :where(button) {

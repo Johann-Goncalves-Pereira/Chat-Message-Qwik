@@ -37,7 +37,7 @@ export const UserOptions = component$(() => {
       </header>
 
       <RowContainerButton
-        className="mx-4 flex items-center gap-2 text-lg 
+        className="mx-4 flex items-center gap-2 py-2 text-lg
         font-medium text-surface-400 hover:border-surface-400 hover:text-surface-300
         [&>i:last-of-type]:hidden [&:hover>i:last-of-type]:grid  [&>i:first-of-type]:grid [&:hover>i:first-of-type]:hidden"
         onClick$={() => (state.changeStatus = !state.changeStatus)}
@@ -69,7 +69,7 @@ export const UserOptionsItems = component$(
 
     return (
       <li
-        class={`relative flex cursor-pointer items-center py-2 px-4 last-of-type:rounded-b hover:bg-teal-700
+        class={`relative my-1 flex cursor-pointer items-center py-2 px-4 last-of-type:rounded-b hover:bg-teal-700
         ${separator ? "line" : ""}`}
       >
         <Slot />
