@@ -12,7 +12,7 @@ export const UserPhoto = component$(
     return (
       <img
         style={{ width: `${size * 0.25}rem`, height: `${size * 0.25}rem` }}
-        class={`aspect-square rounded object-cover ${className || ""}`}
+        class={`aspect-square rounded object-cover ${className} text-xs`}
         src={src}
         alt={`User photo - ${name}`}
       />
