@@ -1,5 +1,5 @@
 import { component$, Slot, useStore } from "@builder.io/qwik";
-import { SimpleComponentProps } from "@components/Global";
+import { Icon, SimpleComponentProps } from "@components/Global";
 
 export const SearchBar = component$(
   ({ className = "" }: SimpleComponentProps) => {
@@ -13,8 +13,13 @@ export const SearchBar = component$(
           className || ""
         } `}
       >
+        <label for="search-bar" class="pointer-events-none scale-0 opacity-0">
+          Search Bar - Search anything you want
+        </label>
         <input
           type="search"
+          id="search-bar"
+          name="search-bar"
           class="flex-1 bg-transparent px-3 py-1 text-surface-200"
           onInput$={({ target }) =>
             (state.search = (target as HTMLInputElement).value)
@@ -23,9 +28,7 @@ export const SearchBar = component$(
         />
         <Slot />
         <button class="grid h-full place-items-center px-1">
-          <span class="material-symbols-rounded scale-75 text-surface-400">
-            search
-          </span>
+          <Icon className="scale-75 text-surface-400">search</Icon>
         </button>
       </div>
     );
