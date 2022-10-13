@@ -1,6 +1,6 @@
 import { component$, Slot, useStore, useStylesScoped$ } from "@builder.io/qwik";
 
-import { RowContainerButton } from "@components/Global";
+import { Icon, RowContainerButton } from "@components/Global";
 import { UserPhoto } from "@components/User";
 
 import styles from "./styles.scss?inline";
@@ -30,7 +30,7 @@ export const UserOptions = component$(() => {
         />
         <div>
           <strong id="user-options-title">Johann</strong>
-          <p class="before-ball--empty flex items-center gap-2 text-xs text-surface-300 ">
+          <p class="before-ball--empty mt-2 flex items-center gap-2 text-xs text-surface-300 ">
             Active
           </p>
         </div>
@@ -51,9 +51,7 @@ export const UserOptions = component$(() => {
         <UserOptionsItems>Set yourself as away</UserOptionsItems>
         <UserOptionsItems separator>
           Pulse notifications
-          <span class="material-symbols-rounded ml-16 text-base">
-            navigate_next
-          </span>
+          <Icon className="ml-16 text-base">navigate_next</Icon>
         </UserOptionsItems>
         <UserOptionsItems>Profile</UserOptionsItems>
         <UserOptionsItems separator>Preferences</UserOptionsItems>

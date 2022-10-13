@@ -34,8 +34,8 @@ export const UserHeader = component$(
               id={`current-user-first-name=${name}`}
             >
               <span
-                class="rounded-lg border border-solid
-             border-surface-700 bg-surface-900 py-1 px-3 text-sm"
+                class="rounded-lg border border-solid border-surface-700
+             bg-surface-900 py-2 px-3 text-sm"
               >
                 {name}
               </span>
