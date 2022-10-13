@@ -5,7 +5,7 @@ import { UserHeader } from "@components/User";
 
 export const Header = component$(() => {
   return (
-    <header class="grid grid-cols-[1fr_2fr_1fr] items-center bg-surface-950 py-3">
+    <header class="grid grid-cols-[1fr_2fr_1fr] items-center border-b border-solid border-surface-700 bg-surface-950 py-3">
       <SearchBar className="col-start-2" />
       <UserHeader name="Johann" />
     </header>

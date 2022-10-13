@@ -24,7 +24,7 @@ export default component$(() => {
       </head>
       <body
         lang="en"
-        class="grid h-screen grid-rows-[auto_1fr_auto] bg-surface-800 font-roboto text-surface-100"
+        class="grid h-[calc(100vh-3px)] grid-rows-[auto_1fr_auto] bg-surface-800 font-roboto text-surface-100"
       >
         <RouterOutlet />
         <ServiceWorkerRegister />

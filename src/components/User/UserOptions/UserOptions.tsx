@@ -1,6 +1,6 @@
 import { component$, Slot, useStore, useStylesScoped$ } from "@builder.io/qwik";
 
-import { RowContainerButton } from "@components/Global";
+import { Icon, RowContainerButton } from "@components/Global";
 import { UserPhoto } from "@components/User";
 
 import styles from "./styles.scss?inline";
@@ -30,14 +30,14 @@ export const UserOptions = component$(() => {
         />
         <div>
           <strong id="user-options-title">Johann</strong>
-          <p class="before-ball--empty flex items-center gap-2 text-xs text-surface-300 ">
+          <p class="before-ball--empty mt-2 flex items-center gap-2 text-xs text-surface-300 ">
             Active
           </p>
         </div>
       </header>
 
       <RowContainerButton
-        className="mx-4 flex items-center gap-2 text-lg 
+        className="mx-4 flex items-center gap-2 py-2 text-lg
         font-medium text-surface-400 hover:border-surface-400 hover:text-surface-300
         [&>i:last-of-type]:hidden [&:hover>i:last-of-type]:grid  [&>i:first-of-type]:grid [&:hover>i:first-of-type]:hidden"
         onClick$={() => (state.changeStatus = !state.changeStatus)}
@@ -51,9 +51,7 @@ export const UserOptions = component$(() => {
         <UserOptionsItems>Set yourself as away</UserOptionsItems>
         <UserOptionsItems separator>
           Pulse notifications
-          <span class="material-symbols-rounded ml-16 text-base">
-            navigate_next
-          </span>
+          <Icon className="ml-16 text-base">navigate_next</Icon>
         </UserOptionsItems>
         <UserOptionsItems>Profile</UserOptionsItems>
         <UserOptionsItems separator>Preferences</UserOptionsItems>
@@ -69,7 +67,7 @@ export const UserOptionsItems = component$(
 
     return (
       <li
-        class={`relative flex cursor-pointer items-center py-2 px-4 last-of-type:rounded-b hover:bg-teal-700
+        class={`relative my-1 flex cursor-pointer items-center py-2 px-4 last-of-type:rounded-b hover:bg-teal-700
         ${separator ? "line" : ""}`}
       >
         <Slot />
