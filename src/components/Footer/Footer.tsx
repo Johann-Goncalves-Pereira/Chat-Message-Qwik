@@ -1,4 +1,5 @@
 import { component$, useStore, useClientEffect$ } from "@builder.io/qwik";
+import { Icon } from "@components/Global";
 
 export const Footer = component$(() => {
   const clock = useStore({
@@ -23,9 +24,9 @@ export const Footer = component$(() => {
   const currentTime = h + ":" + m;
 
   return (
-    <footer class="bg-surface-900 px-2 pt-[2px]">
-      <p class="flex items-center gap-1 text-xs text-surface-400">
-        <span class="material-symbols-rounded text-xs">schedule</span>
+    <footer class="flex items-center bg-surface-900 px-2 pt-[2px]">
+      <p class="flex items-center gap-1 text-[0.5rem] text-surface-400">
+        <Icon className="text-[0.5rem]">schedule</Icon>
         {currentTime}
       </p>
     </footer>
