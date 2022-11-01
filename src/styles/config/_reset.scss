@@ -2,65 +2,65 @@
 
 /* Box sizing rules */
 :where(*, *::before, *::after) {
-	box-sizing: border-box;
+  box-sizing: border-box;
 
-	scrollbar-width: thin;
-	scrollbar-color: theme("colors.teal.500") transparent;
+  scrollbar-width: thin;
+  scrollbar-color: theme("colors.teal.500") transparent;
 
-	&::-webkit-scrollbar {
-		background-color: transparent;
-		border-radius: theme("borderRadius.full");
+  &::-webkit-scrollbar {
+    background-color: transparent;
+    border-radius: theme("borderRadius.full");
 
-		width: 0.25rem;
-		height: 0.25rem;
+    width: 0.25rem;
+    height: 0.25rem;
 
-		&-track {
-			border-radius: theme("borderRadius.full");
-		}
+    &-track {
+      border-radius: theme("borderRadius.full");
+    }
 
-		&-thumb {
-			background-color: transparent;
-			background-color: theme("colors.teal.500");
-			&:hover {
-			}
-		}
-	}
+    &-thumb {
+      background-color: transparent;
+      background-color: theme("colors.teal.500");
+      &:hover {
+      }
+    }
+  }
 }
 
 /* Remove default margin */
 :where(:--elements) {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font: inherit;
-	color: inherit;
-	line-height: calc(6px + 1ex) !important;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  color: inherit;
+  line-height: calc(6px + 1ex) !important;
 }
 
 /* Set core body defaults */
 :where(html:focus-within) {
-	scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 :where(body) {
-	width: 100%;
-	text-rendering: optimizeSpeed;
+  width: 100%;
+  text-rendering: optimizeSpeed;
 }
 
 :where(ol, ul) {
-	list-style: none;
+  list-style: none;
 }
 
 :where(blockquote, q) {
-	quotes: none;
-	&::before,
-	&::after {
-		content: "";
-	}
+  quotes: none;
+  &::before,
+  &::after {
+    content: "";
+  }
 }
 
 :where(table) {
-	border-collapse: collapse;
-	border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 // /* A elements that don't have a class get default styles */
@@ -70,62 +70,62 @@
 
 /* Make images easier to work with */
 :where(img, picture) {
-	max-width: 100%;
-	display: block;
+  max-width: 100%;
+  display: block;
 }
 
 :where(:focus-visible) {
-	outline: 1px dashed theme("colors.orange.500");
+  outline: 1px dashed theme("colors.orange.500");
 }
 :where(:focus) {
-	outline: none;
+  outline: none;
 }
 
 :where(::placeholder) {
-	color: inherit;
-	opacity: 0.5;
+  color: inherit;
+  opacity: 0.5;
 }
 
 :where(button, input, textarea, select) {
-	font: inherit;
-	color: inherit;
-	border: 0;
+  font: inherit;
+  color: inherit;
+  border: 0;
 }
 
 // Remove X from input with type="search"
 :where(input)::-webkit-search-cancel-button {
-	-webkit-appearance: none;
-	display: none;
-	opacity: 0;
-	pointer-events: none;
+  -webkit-appearance: none;
+  display: none;
+  opacity: 0;
+  pointer-events: none;
 }
 
 :where(button) {
-	background-color: transparent;
-	border: 0;
-	user-select: none;
+  background-color: transparent;
+  border: 0;
+  user-select: none;
 }
 :where(a) {
-	color: inherit;
-	text-decoration: none;
+  color: inherit;
+  text-decoration: none;
 }
 
 :where(a, button) {
-	cursor: pointer;
+  cursor: pointer;
 }
 
 /* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
 @media (--motionNotOK) {
-	html:focus-within {
-		scroll-behavior: auto;
-	}
+  html:focus-within {
+    scroll-behavior: auto;
+  }
 
-	*,
-	*::before,
-	*::after {
-		animation-duration: 0.01ms !important;
-		animation-iteration-count: 1 !important;
-		transition-duration: 0.01ms !important;
-		scroll-behavior: auto !important;
-	}
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

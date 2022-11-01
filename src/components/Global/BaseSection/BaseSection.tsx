@@ -26,7 +26,7 @@ export const BaseSection = component$(
         aria-labelledby={titleId}
       >
         <header
-          class={`border-b border-solid border-surface-700 bg-surfdoace-900 ${classHeader}`}
+          class={`bg-surfdoace-900 border-b border-solid border-surface-700 ${classHeader}`}
         >
           <Slot name="header" />
         </header>
